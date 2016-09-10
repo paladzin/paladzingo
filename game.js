@@ -33,13 +33,12 @@ function optionLoader(){
         for(let i = 0; i < 5; i++) {
             for(let j = 0; j < 5; j++) {
                 let img = document.createElement("img");
-                img.src = "images/" + optLod[image] + ".png";
+                img.src = "images/" + optLod[image++] + ".png";
                 img.classList.add("game_option");
                 img.dataset.x = i;
                 img.dataset.y = j;
                 img.dataset.action = "option";
                 elem.appendChild(img);
-                image++
             }
         }
 }
