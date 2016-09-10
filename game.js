@@ -9,12 +9,42 @@ let choises = document.getElementsByClassName('game_option');
 
 elem.addEventListener('click', onClick);
 
-var div = document.createElement("div");
-var bingoImage = document.createElement('img');
+let div = document.createElement("div");
+let bingoImage = document.createElement('img');
+
 bingoImage.src = "nichego.png";
-div.id = 'nichego';
 bingoImage.dataset.action = "bingo";
+
+div.id = 'nichego';
 div.appendChild(bingoImage);
+
+let optLod = [];
+for(let i = 0; i < 25; i++){optLod.push(i)};
+
+
+function compareRandom(a, b) {
+    return Math.random() - 0.5;
+}
+
+optLod.sort(compareRandom);
+
+function optionLoader(){
+        let image = 0;
+        for(let i = 0; i < 5; i++) {
+            for(let j = 0; j < 5; j++) {
+                let img = document.createElement("img");
+                img.src = "images/" + optLod[image] + ".png";
+                img.classList.add("game_option");
+                img.dataset.x = i;
+                img.dataset.y = j;
+                img.dataset.action = "option";
+                elem.appendChild(img);
+                image++
+            }
+        }
+}
+
+optionLoader();
 
 function onClick(event) {
     event.preventDefault();
@@ -43,6 +73,7 @@ function bingoCheck(target) {
     let x = target.dataset.x;
     let y = target.dataset.y;
     let arr = matrixGame();
+
     function checkX() {
         let num = 0;
         for(let i = 0; i < 5; i++){
@@ -54,28 +85,53 @@ function bingoCheck(target) {
             return true;
         }
     }
-    function checkY(){
+
+    function checkY() {
         let num = 0;
-        for(let i = 0; i < 5; i++){
-            if(classCheck(arr[i][y].classList)){
+        for (let i = 0; i < 5; i++) {
+            if (classCheck(arr[i][y].classList)) {
                 num++;
-                }
             }
-        if(num == 5){
+        }
+        if (num == 5) {
             return true;
         }
-
     }
-    return (checkX() || checkY());
 
+    function checkL() {
+        let num = 0;
+        for(let i = 0; i < 5; i++){
+            if(classCheck(arr[i][i].classList)){
+                num++;
+            }
+        }
+        if (num == 5) {
+            return true;
+        }
+    }
+
+    function checkR() {
+        let num = 0;
+        let k = 4;
+        for(let i = 0; i < 5; i++){
+            if(classCheck(arr[i][k--].classList)){
+                num++;
+            }
+        }
+        if (num == 5) {
+            return true;
+        }
+    }
+
+    return (checkX() || checkY()/* || checkL() || checkR*/);
 }
 
-    function matrixGame(){
-    var arr = [];
-    var num = 0;
-    for(var i=0; i<5; i++){
+function matrixGame(){
+    let arr = [];
+    let num = 0;
+    for(let i=0; i<5; i++){
         arr[i] = [];
-        for(var j=0; j<5; j++){
+        for(let j=0; j<5; j++){
             arr[i][j] = choises[num];
             num++;
         }
@@ -83,7 +139,7 @@ function bingoCheck(target) {
     return arr;
 }
 
-    function classCheck(arr){
+function classCheck(arr){
     for(let i = 0; i < arr.length; i++){
        if(arr[i] == "chosen"){
            return true;
@@ -91,6 +147,3 @@ function bingoCheck(target) {
     }
  }
 
-    function bingo(){
-
-    }
