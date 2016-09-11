@@ -43,7 +43,7 @@ function optionLoader(){
         }
 }
 
-optionLoader();
+/*optionLoader();*/
 
 function onClick(event) {
     event.preventDefault();
