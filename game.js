@@ -113,7 +113,7 @@ function bingoCheck(target) {
         let num = 0;
         let k = 4;
         for(let i = 0; i < 5; i++){
-            if(classCheck(arr[i][k--].classList)){
+            if(classCheck(arr[k--][i].classList)){
                 num++;
             }
         }
@@ -122,7 +122,7 @@ function bingoCheck(target) {
         }
     }
 
-    return (checkX() || checkY()/* || checkL() || checkR*/);
+    return (checkX() || checkY() || checkL() || checkR());
 }
 
 function matrixGame(){
