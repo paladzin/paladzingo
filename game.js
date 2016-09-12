@@ -144,5 +144,4 @@ function classCheck(arr){
            return true;
        }
     }
- }
-
+ } 
