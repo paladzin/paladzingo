@@ -97,7 +97,7 @@ function bingoCheck(target) {
         }
     }
 
-    function checkL() {
+/*    function checkL() {
         let num = 0;
         for(let i = 0; i < 5; i++){
             if(classCheck(arr[i][i].classList)){
@@ -121,8 +121,8 @@ function bingoCheck(target) {
             return true;
         }
     }
-
-    return (checkX() || checkY() || checkL() || checkR());
+*/
+    return (checkX() || checkY() /* || checkL() || checkR() */);
 }
 
 function matrixGame(){
