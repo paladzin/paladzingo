@@ -1,0 +1,22 @@
+{
+  "name": "paladzingo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Outfire/paladzingo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Outfire/paladzingo/issues"
+  },
+  "homepage": "https://github.com/Outfire/paladzingo#readme",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
