@@ -5,4 +5,4 @@ node_js:
   - "0.6"
   - "iojs"
   - "4.6.1"
-  script: nodejs test.js
+  script: npm test.js
