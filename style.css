@@ -67,7 +67,7 @@ img{
     margin: -1.7px 0;
     height: 75px;
     width: 75px;
-    border: 2.9px solid grey;
+    border: 1.9px solid grey;
 }
 
 .game_option img{
@@ -77,13 +77,13 @@ img{
 }
 
 .game_option:hover{
-    border: 2px solid red;
+    border: 1px solid red;
 
 }
 
 .chosen{
     transition: 1s;
-    border: 2px solid rgba(255, 0, 0, 0.33);
+    border: 1px solid rgba(255, 0, 0, 0.33);
     border-radius: 50% ;
 }
 
